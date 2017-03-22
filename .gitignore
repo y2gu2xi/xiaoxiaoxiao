@@ -4,7 +4,7 @@ sideslip
 # Logs
 logs
 .idea
-DS_store
+.DS_store
 *.log
 npm-debug.log*
 yarn-debug.log*
