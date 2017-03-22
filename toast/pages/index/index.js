@@ -15,14 +15,15 @@ Page({
     onLoad () {
         //创建可重复使用的WeToast实例，并附加到this上，通过this.wetoast访问
         new app.WeToast()
-        this.wetoast.toast({
-            title: '创建可重复使用的WeToast实例',
-            duration: 0
-        })
+
         // fetch("http://blog.parryqiu.com").then(function(response){console.log(response)})
     },
 
     onTimeToast () {
+        this.wetoast.toast({
+            title: '创建可重复使用的WeToast实例创建可重复使用的WeToast实例',
+            duration: 1000
+        })
 
     }
 })

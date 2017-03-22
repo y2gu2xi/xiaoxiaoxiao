@@ -50,8 +50,11 @@ WeToast.prototype.show = function(data) {
     })
 
     setTimeout(()=>{
-        let animation = wx.createAnimation()
-        animation.opacity(1).step()
+        let animation = wx.createAnimation({
+            duration: 300,
+            timingFunction: "ease-in-out",
+        })
+        animation.translate3d('-50%',0,0).step()
         data.animationData = animation.export()
         data.reveal = true
         page.setData({
@@ -85,16 +88,18 @@ WeToast.prototype.hide = function() {
         return
     }
     
-    let animation = wx.createAnimation()
-    animation.opacity(0).step()
+    let animation = wx.createAnimation({
+        duration: 300,
+        timingFunction: "ease-in-out",
+    })
+    animation.translate3d('-50%','-100%',0).step()
     page.setData({
         '__wetoast__.animationData': animation.export(),
-        '__wetoast__.reveal': false //这里加一行
     })
     
     setTimeout(() => {
         page.setData({
-            __wetoast__: {}
+            __wetoast__: {reveal:false},
         })
     }, 400)
 }
