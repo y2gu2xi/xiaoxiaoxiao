@@ -19,6 +19,7 @@ Page({
     },
 
     onTimeToast () {
+        console.log('i fo...')
         this.wetoast.toast({
             title: 'WeToast',
             duration: 1000

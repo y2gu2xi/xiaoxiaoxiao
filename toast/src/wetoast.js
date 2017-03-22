@@ -88,7 +88,8 @@ WeToast.prototype.hide = function() {
     let animation = wx.createAnimation()
     animation.opacity(0).step()
     page.setData({
-        '__wetoast__.animationData': animation.export()
+        '__wetoast__.animationData': animation.export(),
+        '__wetoast__.reveal': false //这里加一行
     })
     
     setTimeout(() => {
